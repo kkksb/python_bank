@@ -1,5 +1,6 @@
 class Account:
-    pass
+    def __init__(self, deposit):
+        self.deposit = deposit
 
 
 class Calculate:
