@@ -11,3 +11,7 @@
 ## 命名規則
 
 Python の命名規則 - Pythonのきほん - やさしい Python 入門 https://python.softmoco.com/basics/python-naming-conventions.php
+
+## 関数を動的に呼び出す
+
+Python - 関数を文字列から動的に呼び出す - Qiita https://qiita.com/Chanmoro/items/9b0105e4c18bb76ed4e9
