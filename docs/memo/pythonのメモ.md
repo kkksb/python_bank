@@ -14,4 +14,15 @@ Python の命名規則 - Pythonのきほん - やさしい Python 入門 https:/
 
 ## 関数を動的に呼び出す
 
-Python - 関数を文字列から動的に呼び出す - Qiita https://qiita.com/Chanmoro/items/9b0105e4c18bb76ed4e9
+Pythonにおけるリフレクション - Qiita https://qiita.com/icoxfog417/items/bf04966d4e9706eb9e04
+
+## importの方法
+
+Pythonの相対インポートで上位ディレクトリ・サブディレクトリを指定 | note.nkmk.me https://note.nkmk.me/python-relative-import/
+
+Pythonでimportの対象ディレクトリのパスを確認・追加（sys.pathなど） | note.nkmk.me https://note.nkmk.me/python-import-module-search-path/
+
+### 困りごと
+
+libs内のoperation_commonを同libs内のモジュールでインポートしたい。
+インポートしたものを利用してcli.pyから呼び出したいが、インタプリタのディレクトリとうまくかみ合わないようだ。
