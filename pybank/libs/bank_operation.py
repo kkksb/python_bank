@@ -1,3 +1,4 @@
+from itertools import accumulate
 import sys
 import os
 
@@ -9,14 +10,12 @@ import operation_common as opc
 
 
 class Account:
-    def __init__(self, deposit=10000):
-        self.deposit = deposit
+    deposit = 10000
 
 
 class BankOperate:
     def __init__(self):
-        account = Account()
-        self.deposit = account.deposit
+        self.deposit = Account.deposit
 
     def operate(self, deal):
         if deal in opc.OperationManual.operation:
@@ -57,3 +56,19 @@ class BankOperate:
 
     def show(self):
         print(f"現在の残高は{self.deposit}円です")
+
+
+class PassbookOperator:
+    def __init__(self, passbook_file):
+        self.deposit = (self.read_last_deal()).get("deposit")
+        Account.deposit = self.deposit
+        self.passbook_file = passbook_file
+
+    def update_passbook(self):
+        pass
+
+    def show(self):
+        pass
+        
+    def read_last_deal(self):
+        pass
