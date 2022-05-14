@@ -63,7 +63,6 @@ class BankOperate:
 
     def init_account(self):
         Account.deposit = int((self.passbook_operator.read_last_deal()))
-        Account.deposit = Account.deposit
         print("通帳から読み取った値で残高を更新しました。(現状、口座のデータを保存する先がテキストファイルだけ)")
 
 
