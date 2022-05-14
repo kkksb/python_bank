@@ -35,12 +35,12 @@ class BankOperate:
         if Account.deposit >= deal_money:
             try:
                 Account.deposit -= deal_money
+                self.passbook_operator.write_deal_on_passbook(Account.deposit)
+                print(f"残高は{Account.deposit}円になりました")
             except Exception:
                 print("取引金額は整数で入力してください")
         elif deal_money == 0:
             print("取引額は0より大きな値を入力してください")
-            self.passbook_operator.write_deal_on_passbook(Account.deposit)
-            print(f"残高は{Account.deposit}円になりました")
         else:
             print("預金以上の金額を引き出すことはできません")
 
