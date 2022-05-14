@@ -1,6 +1,5 @@
 import sys
 import os
-from traceback import print_tb
 
 # pythonのモジュール探索の起点となるディレクトリに、.../libsを入れる
 # すると、pybankからプログラムを実行してもlibs内のモジュール同士で読み込みができる
@@ -38,25 +37,26 @@ class BankOperate:
                 Account.deposit -= deal_money
             except Exception:
                 print("取引金額は整数で入力してください")
+        elif deal_money == 0:
+            print("取引額は0より大きな値を入力してください")
+            self.passbook_operator.write_deal_on_passbook(Account.deposit)
+            print(f"残高は{Account.deposit}円になりました")
         else:
             print("預金以上の金額を引き出すことはできません")
 
-        print(f"残高は{Account.deposit}円になりました")
-
-        self.passbook_operator.write_deal_on_passbook(Account.deposit)
-
     def deposit_func(self):
         print("預ける金額を入力してください")
+        deal_money = int(input())
 
-        try:
-            deal_money = int(input())
-            Account.deposit += deal_money
-        except Exception:
-            print("整数を入力してください")
-
-        print(f"残高は{Account.deposit}円になりました")
-
-        self.passbook_operator.write_deal_on_passbook(Account.deposit)
+        if deal_money > 0:
+            try:
+                Account.deposit += deal_money
+                print(f"残高は{Account.deposit}円になりました")
+                self.passbook_operator.write_deal_on_passbook(Account.deposit)
+            except Exception:
+                print("整数を入力してください")
+        else:
+            print("取引額は0より大きな値を入力してください")
 
     def show(self):
         print(f"現在の残高は{Account.deposit}円です")

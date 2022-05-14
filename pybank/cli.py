@@ -8,7 +8,7 @@ def main():
     """Console script for pybank."""
     parser = argparse.ArgumentParser(description="python practice")
 
-    parser.add_argument('operate', help="python bank application")
+    parser.add_argument('operate', help="python bank start command[operate]")
     parser.add_argument('filename', help="input passbook filename in resouces")
 
     args = parser.parse_args()
