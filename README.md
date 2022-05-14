@@ -6,5 +6,6 @@ pythonの練習リポジトリ。
 ## 実行
 
 ```
+$ cd pybank
 $ python cli.py operate <filename.txt>
 ```
