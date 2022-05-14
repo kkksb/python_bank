@@ -23,10 +23,13 @@ class Reception:
     def confirm_passbook(self, passbook):
         # カレントディレクトリはpybank
         dir = "./resouces"
-        file = dir + passbook
+        file = dir + "/" + passbook
         if os.path.exists(file):
             print("通帳を読み込みました。")
         else:
             print("通帳ファイルが存在しません。新規作成します")
-            with open(file, "w", encoding="utf-8"):
+            with open(file, "w", encoding="utf-8") as f:
+                f.write("10000")
                 print("ファイルを作成しました。")
+        return file
+        

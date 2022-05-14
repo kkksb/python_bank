@@ -5,14 +5,16 @@ import pybank as pyb
 
 
 def main():
-    pybank = pyb.PyBank()
-    
     """Console script for pybank."""
     parser = argparse.ArgumentParser(description="python practice")
+
     parser.add_argument('operate', help="python bank application")
+    parser.add_argument('filename', help="input passbook filename in resouces")
+
     args = parser.parse_args()
 
-    if args.operate == "operate":
+    if args.operate == "operate" and args.filename is not None:
+        pybank = pyb.PyBank(args.filename)
         pybank.operate()
 
     return 0
